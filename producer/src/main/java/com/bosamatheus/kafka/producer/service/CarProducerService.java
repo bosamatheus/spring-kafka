@@ -9,13 +9,13 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CarService {
+public class CarProducerService {
 
-    private static final Logger logger = LoggerFactory.getLogger(CarService.class);
+    private static final Logger logger = LoggerFactory.getLogger(CarProducerService.class);
     private final String topic;
     private final KafkaTemplate<String, CarDTO> kafkaTemplate;
 
-    public CarService(@Value("${topic.name}") String topic, KafkaTemplate<String, CarDTO> kafkaTemplate) {
+    public CarProducerService(@Value("${topic.name}") String topic, KafkaTemplate<String, CarDTO> kafkaTemplate) {
         this.topic = topic;
         this.kafkaTemplate = kafkaTemplate;
     }
